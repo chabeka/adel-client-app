@@ -1,0 +1,8 @@
+{
+    "elements": {},
+    "attributes": {
+        "*ngif": {
+            "context": "tr"
+        }
+    }
+}

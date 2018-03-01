@@ -1,0 +1,35 @@
+<div >	
+	<div>
+        <div>
+            <table class="table" >
+                <thead >
+                    <tr class="header">
+                        <th >id</th>
+                        <th >Username</th>
+                        <th >email</th>
+                        <th >Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngIf="listGrid.isEmpty">
+                        <td >No records found.</td>
+                    </tr>
+                    <tr  *ngFor="let user of listGrid.itemsOfPage">
+
+                        <td  >{{user.id}}</td>
+                        <td  >{{user.username}}</td>
+                        <td  >{{user.email}}</td>
+                        <td >
+                                <button >add new record</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>   
+<app-pagination [maxPageIndex]="listGrid.maxPageIndex" 
+            (pageNumberChanged)="pageNumberChanged($event)">
+</app-pagination>
+
+ 

@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~styles/bootstrap-4.0.0-dist/css/bootstrap.min.css';
+
+        /*Changes the add button icons*/
+        .e-grid .e-addnew:before {
+            content: "\e609"; /*Change custom icons for the built in icons*/
+        }
+        /*Changes the edit button icons*/
+        .e-grid .e-edit:before {
+            content: "\e600";
+        }
+        /*Changes the delete button icons*/
+        .e-grid .e-delete:before {
+            content: "\e680" !important;
+        }
+        /*Changes the save button icons*/
+        .e-grid .e-save:before {
+            content: "\e646";
+        }
+        /*Change the cancel icons*/
+        .e-grid .e-cancel: before {
+            content: "\e60a";
+        }

@@ -1,0 +1,42 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 1 mars 2018, 12:48:23
+    Author     : Aliou
+*/
+
+.pagination ul {
+    text-align: center;
+}
+.pagination ul li {
+    display: inline;
+    vertical-align: top;
+}
+.pagination ul li a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: #f5f5f5;
+    -webkit-border-radius: 100px;
+    border-radius: 100px;
+    font-size: 1.3em;
+    font-weight: 700;
+    line-height: 30px;
+}
+.pagination ul li a:hover,
+.pagination ul li a:focus {
+    color: #000 !important;
+    text-decoration: none;
+}
+.pagination ul li.active a{
+    background: #999;
+    color: #fff;
+}
+.pagination {
+    display: table;
+    width: 100%;
+    margin-top: 10px;
+}

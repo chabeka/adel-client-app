@@ -1,0 +1,51 @@
+<div class="row" id="pwd-container">
+      
+    <div class="col-md-2"></div>
+
+	<div class="col-md-8">
+		<section class="signup-form">
+		
+				
+				<form role="login" [formGroup]="signupForm" (ngSubmit)="onSignup()">
+					<img src="/assets/images/rhlOgo.PNG" class="img-responsive img-width" alt="" /> 
+					
+					<!-- email input -->	
+					
+					<input type="email" formControlName="email" name="email"
+						placeholder="Email" required class="form-control input-lg" /> 
+					<div class="alert alert-danger" *ngIf="signupForm.controls['email'].touched && !signupForm.controls['email'].valid">
+						Le format de mail n'est pas valid
+					</div>
+
+					<!-- Password input -->
+					<input type="password" class="form-control input-lg"
+						formControlName="password" placeholder="Mot de passe" required="" />
+	
+					<!-- password confirm -->
+					<input type="password" class="form-control input-lg"
+						formControlName="passwordconfirm" placeholder="Confirmation de mot de passe" required="" />
+					
+					  <div class="alert alert-danger" *ngIf="signupForm.controls['passwordconfirm'].touched && signupForm.controls['passwordconfirm'].errors?.matchPassword">Les mots de passe ne sont identiques</div>
+					
+					
+					<button class="btn waves-effect waves-light" type="submit" [disabled]="!signupForm.valid" >Cr&eacute;er le compte </button>
+					<div>
+						<a [routerLink]="['/login']">Connexion</a> ou <a [routerLink]="['/identifiant-recall']">Mot de passe perdu</a>
+					</div>
+					
+					
+					<!-- div class="row">
+				      <div class="input-field col s12">
+				        <label for="emaill">Email</label>
+				        <input id="emaill" type="email" class="validate" formControlName="emaill" class="input-lg"/>
+				      </div>
+				    </div-->
+				    
+				 </form> 
+		</section>
+	</div>
+	
+	<div class="col-md-4"></div>
+    
+ 
+</div>

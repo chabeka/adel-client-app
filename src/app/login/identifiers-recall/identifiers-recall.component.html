@@ -1,0 +1,21 @@
+	<div class="row" id="pwd-container">
+		<div class="col-md-4"></div>
+		<div class="col-md-4">
+			<section class="login-form">
+				
+				<form role="login" [formGroup]="form" (ngSubmit)="onRecallIfentifiers()">
+					Rappel d'identifiants
+					<input type="email" formControlName="username"
+						placeholder="Email" required class="form-control input-lg" /> 
+
+					<button type="submit" name="recallemail"
+						class="btn btn-lg btn-primary btn-block" [disabled]="!form.valid">Envoyer</button>
+					<div>
+						<a [routerLink]="['/login']">Se connecter</a> ou <a [routerLink]="['/signup']">Cr&eacute;er un compte</a>
+					</div>
+				</form>
+			</section>
+		</div>
+		<div class="col-md-4"></div>
+		
+	</div>
