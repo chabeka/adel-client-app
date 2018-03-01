@@ -48,7 +48,6 @@ export class PersongridComponent implements OnInit {
       console.log(event)
       this.listGrid.currentPageIndex = event;
       this.usersService.getPagingUsers(this.listGrid.currentPageIndex, this.listGrid.itemsPerPage ).subscribe(allUsers => {
-          console.log(">>pageNumberChanged")
           //this.listUsers = allUsers;
           this.listGrid.items = allUsers;
       });
