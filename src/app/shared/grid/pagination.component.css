@@ -10,6 +10,7 @@ and open the template in the editor.
 
 .pagination ul {
     text-align: center;
+    margin-top: 10px;
 }
 .pagination ul li {
     display: inline;
@@ -38,5 +39,5 @@ and open the template in the editor.
 .pagination {
     display: table;
     width: 100%;
-    margin-top: 10px;
+    border: 1px solid;
 }

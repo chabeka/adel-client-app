@@ -8,7 +8,8 @@ import { Observable } from 'rxjs/Rx';
     styleUrls: ['./pagination.component.css'],
     template: `
     <div class="pagination">
-        <ul>
+        <input type="text" placeholder="search"/>
+        <ul >
             
             <li [class.disabled]="currentPageNumber === 1 || !maxPageIndex">
                 <a href aria-label="Previous" 
@@ -61,7 +62,7 @@ export class PaginationComponent implements OnInit, OnChanges{
 
     ngOnInit() {
         this.setCurrentPage(1);
-     }
+    }
 
     ngOnChanges(changes: { [propertyName: string]: SimpleChange }) {
         if (changes['maxPageIndex']) {

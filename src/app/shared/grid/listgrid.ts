@@ -25,9 +25,9 @@ export class ListGrid<T> {
     get itemsOfPage(): T[]{
         
         let pageRowEnd = this.itemsPerPage + this.pageRowStart;
-        console.log(this.pageRowStart)
+        /*console.log(this.pageRowStart)
         console.log(pageRowEnd)
-        console.log(this.items.slice(this.pageRowStart, pageRowEnd));
+        console.log(this.items.slice(this.pageRowStart, pageRowEnd));*/
         return this.items.slice(this.pageRowStart, pageRowEnd);
     }
     set webServiceUrl(url:string){

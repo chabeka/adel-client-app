@@ -10,6 +10,7 @@ import { SignupComponent } from '../login/signup/signup.component';
 import { IdentifiersRecallComponent } from '../login/identifiers-recall/identifiers-recall.component';
 import { PersongridComponent } from "../personnes/persongrid/persongrid.component";
 
+// Routes
 
 const appRoutes: Routes = [
     //{ path: '', component: HomeComponent, canActivate: [AuthGuard] },

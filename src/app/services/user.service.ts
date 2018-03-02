@@ -65,7 +65,7 @@ export class UserService {
       email: username as string,
       password: password as string,
       token: token
-      
+     
     }
     return user;
   }

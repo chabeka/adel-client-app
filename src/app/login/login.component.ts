@@ -43,11 +43,11 @@ export class LoginComponent implements OnInit {
   onLogin(){
     this.auth.login(this.loginFormToUserModel())
         .subscribe(currentUser => {
-            console.log(currentUser);
+            //console.log(currentUser);
             if (!User.isNull(currentUser)){
-                console.log("logger");
-                this.router.navigate(['/home'])
+                //console.log("logger");
                 // go to home page
+                this.router.navigate(['/home'])
             } else {
                 // 
                 console.log("loggin error")
