@@ -51,4 +51,10 @@ export class PersongridComponent implements OnInit {
           this.listGrid.items = allUsers;
       });
   }
+  searchField(event): void{
+      //console.log(event)
+      this.usersService.findUsers(event).subscribe( allUsers => {
+          this.listGrid.items = allUsers;
+      });
+  }
 }

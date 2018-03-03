@@ -47,14 +47,14 @@ export class SignupComponent implements OnInit {
 
   onSignup() {
     var result,
-        userValue = this.signupForm.value; 
-    console.log(userValue.email);
+    userValue = this.signupForm.value; 
+    //console.log(userValue.email);
     if (userValue.id){
       //result = this.usersService.updateUser(userValue);
     } else {
       result = this.usersService.addUser(userValue);
     }
-    console.log(result);
+    //console.log(result);
     result.subscribe(data => this.router.navigate(['users']));
   }
 }

@@ -8,9 +8,8 @@ import { Observable } from 'rxjs/Rx';
     styleUrls: ['./pagination.component.css'],
     template: `
     <div class="pagination">
-        <input type="text" placeholder="search"/>
-        <ul >
-            
+        <input [(ngModel)]="searchFieldValue" type="text" placeholder="search" class="serach-input" (keyup)="setSearchField($event)"/>
+        <ul class="" >     
             <li [class.disabled]="currentPageNumber === 1 || !maxPageIndex">
                 <a href aria-label="Previous" 
                     (click)="setCurrentPage(currentPageNumber - 1, $event)">
@@ -58,7 +57,9 @@ export class PaginationComponent implements OnInit, OnChanges{
     @Input() maxPageIndex: number;
     @Input() rowChanged: Observable<number>;
     @Output() pageNumberChanged = new EventEmitter();
+    @Output() searchField = new EventEmitter();
     currentPageNumber: number = 1;
+    private searchFieldValue:string;
 
     ngOnInit() {
         this.setCurrentPage(1);
@@ -91,6 +92,16 @@ export class PaginationComponent implements OnInit, OnChanges{
         if (!this.rowChanged) {
             this.currentPageNumber = pageNumber;
         }
+    }
+    setSearchField(event:any): void{
+        if (event) {
+            event.preventDefault();
+        }
+        //this.searchField.emit(this.textValue);
+        setTimeout(() => {
+            //console.log(this.textValue)
+            this.searchField.emit(this.searchFieldValue);
+        }, 3000);
     }
 
     range(min: number, max: number): number[] {

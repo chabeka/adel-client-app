@@ -42,7 +42,7 @@ export class AuthentificationService {
   private static handleError(error: any) {
 	    let errorMessage = (error.message) ? error.message :
 	        error.status ? `${error.status} - ${error.statusText}` : `Server error`;
-	    console.log(' >>>> ' + errorMessage);
+	    //console.log(' >>>> ' + errorMessage);
 	    return Observable.throw(errorMessage);
 	}
 }

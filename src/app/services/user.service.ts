@@ -15,7 +15,7 @@ export class UserService {
    * get all users form server
    */
   getAll(){
-    return this.http.get(API_URL + '/users?page=0&size=2').map(res => res.json());;
+    return this.http.get(API_URL + '/users').map(res => res.json());;
   }
   
    /**
@@ -43,7 +43,7 @@ export class UserService {
    * get user from server by username
    */
   getUserByLogin(username:string){
-    return this.http.get(API_URL + '/user', username).map(res => res.json() as User);
+    return this.http.get(API_URL + `/user?username=${username}` ).map(res => res.json() as User);
   }
   
   /**
@@ -74,6 +74,12 @@ export class UserService {
    * Create a new user
    */
   addUser(user){
-    return this.http.post(API_URL + "/users", user).map(res => res.json)
+      return this.http.post(API_URL + "/users", user).map(res => res.json());
   }
+  /**
+   * find user on server by key word
+   */
+   findUsers(keyword:any){
+       return this.http.get(API_URL + `/users?searchValue=${keyword}`).map(res => res.json());
+   }
 }
