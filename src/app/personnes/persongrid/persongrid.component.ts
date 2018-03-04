@@ -1,6 +1,6 @@
 import { User } from "../../models";
 import { ListGrid } from "../../shared/grid/listgrid";
-import {Router, ActivatedRoute} from '@angular/router';
+import {Router, ActivatedRoute, NavigationExtras} from '@angular/router';
 import { Component, OnInit, ViewChild  } from '@angular/core';
 import {PersonviewComponent} from '../personview/personview.component';
 import {UserService} from "../../services/user.service";
@@ -61,9 +61,14 @@ export class PersongridComponent implements OnInit {
   /**
    * Redirect to the user edition page when we click on row
    */
-  editRow(user:User){
-      console.log(user)
-      let idUser = user.id;
-      this.router.navigate([`edit-user/${idUser}`]);
-  }
+    editRow(user:User){
+        console.log(user)
+        let idUser = user.id;
+        let navigationExtras: NavigationExtras = {
+            queryParams: {
+                "idUser": idUser,
+            }
+        };
+        this.router.navigate(["edit-user"], navigationExtras);
+    }
 }

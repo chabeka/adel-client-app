@@ -42,7 +42,10 @@ export class SignupComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+    console.log();
+    this.route.queryParams.subscribe( params => {
+        console.log(params)
+    });
   }
 
   onSignup() {
