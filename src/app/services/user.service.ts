@@ -45,6 +45,12 @@ export class UserService {
   getUserByLogin(username:string){
     return this.http.get(API_URL + `/user?username=${username}` ).map(res => res.json() as User);
   }
+   /**
+   * get user from server by idUser
+   */
+  getUserByIdUser(idUser:number){
+    return this.http.get(API_URL + `/users?idUser=${idUser}` ).map(res => res.json() as User);
+  }
   
   /**
    * post request for login a user

@@ -44,7 +44,11 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
     console.log();
     this.route.queryParams.subscribe( params => {
-        console.log(params)
+        //console.log(params)
+        this.usersService.getUserByIdUser(params["idUser"]).
+            subscribe(user => {
+                this;user = user;
+            });
     });
   }
 

@@ -72,3 +72,4 @@ export class PersongridComponent implements OnInit {
         this.router.navigate(["edit-user"], navigationExtras);
     }
 }
+
