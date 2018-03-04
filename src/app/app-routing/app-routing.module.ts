@@ -19,6 +19,7 @@ const appRoutes: Routes = [
     { path: 'identifiant-recall', component: IdentifiersRecallComponent},
     { path: 'home', component: HomeComponent },
     { path: 'person-list', component: PersongridComponent},
+    {path: 'edit-user/:id', component: SignupComponent},
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
 ];

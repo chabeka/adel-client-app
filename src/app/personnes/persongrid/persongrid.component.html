@@ -14,7 +14,7 @@
                     <tr *ngIf="listGrid.isEmpty">
                         <td >No records found.</td>
                     </tr>
-                    <tr  *ngFor="let user of listGrid.itemsOfPage">
+                    <tr  *ngFor="let user of listGrid.itemsOfPage" (click)="editRow(user)">
 
                         <td  >{{user.id}}</td>
                         <td  >{{user.username}}</td>

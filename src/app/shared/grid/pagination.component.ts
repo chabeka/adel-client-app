@@ -60,6 +60,7 @@ export class PaginationComponent implements OnInit, OnChanges{
     @Output() searchField = new EventEmitter();
     currentPageNumber: number = 1;
     private searchFieldValue:string;
+    private timeout = null;
 
     ngOnInit() {
         this.setCurrentPage(1);
@@ -97,11 +98,15 @@ export class PaginationComponent implements OnInit, OnChanges{
         if (event) {
             event.preventDefault();
         }
+        //console.log(this.timeout)
+        clearTimeout(this.timeout);
         //this.searchField.emit(this.textValue);
-        setTimeout(() => {
+        this.timeout = setTimeout(() => {
             //console.log(this.textValue)
             this.searchField.emit(this.searchFieldValue);
+            //console.log(this.timeout);
         }, 3000);
+        
     }
 
     range(min: number, max: number): number[] {

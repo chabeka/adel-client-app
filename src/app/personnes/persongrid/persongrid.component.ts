@@ -1,5 +1,6 @@
 import { User } from "../../models";
 import { ListGrid } from "../../shared/grid/listgrid";
+import {Router, ActivatedRoute} from '@angular/router';
 import { Component, OnInit, ViewChild  } from '@angular/core';
 import {PersonviewComponent} from '../personview/personview.component';
 import {UserService} from "../../services/user.service";
@@ -17,7 +18,7 @@ export class PersongridComponent implements OnInit {
     private i:number = 0;
     private currentPageIndex: number;
     
-  constructor(private usersService: UserService) { 
+  constructor(private usersService: UserService, private router:Router) { 
     
     console.log( "--- PersonGridComponent ---")
     this.listGrid = new ListGrid<User>();
@@ -56,5 +57,13 @@ export class PersongridComponent implements OnInit {
       this.usersService.findUsers(event).subscribe( allUsers => {
           this.listGrid.items = allUsers;
       });
+  }
+  /**
+   * Redirect to the user edition page when we click on row
+   */
+  editRow(user:User){
+      console.log(user)
+      let idUser = user.id;
+      this.router.navigate([`edit-user/${idUser}`]);
   }
 }
