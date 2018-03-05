@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
                 console.log("loggin error")
             }
  	},
-       response => {console.log(response)})     
+       response => {console.log("response")})     
   }
   
   /**

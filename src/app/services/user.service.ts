@@ -5,6 +5,7 @@ import 'rxjs/Rx';
 import { Observable } from 'rxjs/Observable';
 import { User } from '../models/user';
 import { API_URL } from '../core/core.module';
+import {Utils} from '../shared/Utils'
 
 @Injectable()
 export class UserService {
@@ -29,7 +30,7 @@ export class UserService {
    * get User from server by user model
    */
   getUser(user:User){
-    return this.http.post(API_URL + '/user', user).map(res => res.json() as User);;
+      return this.http.post(API_URL + '/user', user, Utils.generateOptions()).map(res => res.json() as User);;
   }
   
   /**

@@ -17,6 +17,7 @@ import { IdentifiersRecallComponent } from './login/identifiers-recall/identifie
 import { UserService } from "./services/user.service";
 import { HomeComponent } from './home/home.component';
 import {PersonnesModule} from "./personnes/personnes.module";
+import { LoaderComponent } from './shared/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {PersonnesModule} from "./personnes/personnes.module";
     LoginComponent,
     SignupComponent,
     IdentifiersRecallComponent,
-    HomeComponent
+    HomeComponent,
+    LoaderComponent
 
   ],
   imports: [
