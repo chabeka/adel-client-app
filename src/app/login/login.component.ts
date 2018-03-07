@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
 import { FormBuilder, FormGroup, Validator, FormControl, Validators } from '@angular/forms';
 //import {Message} from "primeng/components/common/api";
+import {LoaderService} from '../shared/loader/loader.service';
 
 //
 
@@ -26,7 +27,8 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private auth: AuthentificationService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private loader: LoaderService
   )
   {
     this.model = new User();
@@ -41,6 +43,7 @@ export class LoginComponent implements OnInit {
   }
   
   onLogin(){
+    this.loader.show();
     this.auth.login(this.loginFormToUserModel())
         .subscribe(currentUser => {
             //console.log(currentUser);
@@ -53,7 +56,9 @@ export class LoginComponent implements OnInit {
                 console.log("loggin error")
             }
  	},
-       response => {console.log("response")})     
+        error => this.loader.hide(),
+        () => this.loader.hide()
+    )     
   }
   
   /**

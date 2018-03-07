@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import { EJAngular2Module } from 'ej-angular2';
@@ -18,7 +18,8 @@ import { UserService } from "./services/user.service";
 import { HomeComponent } from './home/home.component';
 import {PersonnesModule} from "./personnes/personnes.module";
 import { LoaderComponent } from './shared/loader/loader.component';
-
+import {LoaderService} from './shared/loader/loader.service';
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,12 @@ import { LoaderComponent } from './shared/loader/loader.component';
     EJAngular2Module.forRoot(),
     PersonnesModule
   ],
-  providers: [AuthentificationService, UserService, {provide: LoggerService, useClass: ConsoleLoggerServiceService}],
+  providers: [
+    AuthentificationService, 
+    UserService, 
+    {provide: LoggerService, useClass: ConsoleLoggerServiceService},
+    LoaderService
+    ],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

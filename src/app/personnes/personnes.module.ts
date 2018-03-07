@@ -8,7 +8,7 @@ import { ListGridModule } from '../shared/grid/list-grid.module';
 @NgModule({
   imports: [
     CommonModule,
-    ListGridModule,
+    ListGridModule
   ],
   declarations: [PersongridComponent, PersonviewComponent, PersoneditComponent],
   exports: [PersongridComponent, PersonviewComponent, PersoneditComponent]

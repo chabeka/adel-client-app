@@ -9,6 +9,7 @@ import { LoginComponent } from '../login/login.component';
 import { SignupComponent } from '../login/signup/signup.component';
 import { IdentifiersRecallComponent } from '../login/identifiers-recall/identifiers-recall.component';
 import { PersongridComponent } from "../personnes/persongrid/persongrid.component";
+import {PersonviewComponent} from "../personnes/personview/personview.component";
 
 // Routes
 
@@ -20,6 +21,7 @@ const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'person-list', component: PersongridComponent},
     {path: 'edit-user', component: SignupComponent},
+    {path: 'user-view', component: PersonviewComponent},
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
 ];
