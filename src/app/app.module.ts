@@ -19,6 +19,7 @@ import { HomeComponent } from './home/home.component';
 import {PersonnesModule} from "./personnes/personnes.module";
 import { LoaderComponent } from './shared/loader/loader.component';
 import {LoaderService} from './shared/loader/loader.service';
+import {AuthGuardService} from "./services/auth-guard.service";
  
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import {LoaderService} from './shared/loader/loader.service';
     AuthentificationService, 
     UserService, 
     {provide: LoggerService, useClass: ConsoleLoggerServiceService},
-    LoaderService
+    LoaderService,
+    AuthGuardService
     ],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]

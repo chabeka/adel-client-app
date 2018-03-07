@@ -9,6 +9,7 @@ import { ListGridModule } from '../shared/grid/list-grid.module';
   imports: [
     CommonModule,
     ListGridModule
+    
   ],
   declarations: [PersongridComponent, PersonviewComponent, PersoneditComponent],
   exports: [PersongridComponent, PersonviewComponent, PersoneditComponent]

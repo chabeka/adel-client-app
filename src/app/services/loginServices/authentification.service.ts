@@ -22,7 +22,7 @@ export class AuthentificationService {
 
   //
   login(user: User): Observable<User> {
-    console.log(user);
+    //console.log(user);
   		/*return this.http.get(API_URL + '/login', user)
   				.map(response => response.json() as User)
   				.map(user => {
@@ -45,4 +45,28 @@ export class AuthentificationService {
 	    //console.log(' >>>> ' + errorMessage);
 	    return Observable.throw(errorMessage);
 	}
+    
+    /**
+     * get token stored into localestorage
+     */    
+    getToken():string {
+        return "";
+    }
+    /**
+     * Check the state of session
+     */
+    isTokenExpired():boolean{
+        let token :string;
+        token = this.getToken();
+        if (!token) return true;
+        
+        
+        return true;
+    }
+    /**
+     * Check if logged user is authorized
+     */
+    isAuthorized():boolean{
+        return true;
+    }
 }
